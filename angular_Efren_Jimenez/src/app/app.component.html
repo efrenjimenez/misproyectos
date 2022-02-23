@@ -1,9 +1,8 @@
+<app-barra-navegacion></app-barra-navegacion>
 <div class="container">
-
-    <app-barra-navegacion></app-barra-navegacion>
-    <div class="row">
-        <img src="../assets/img/inicio.jpg" class="col-6 img-thumbnail" alt="...">
-        <app-jumbotron class="col-6"></app-jumbotron>
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+        <app-imagen-portada class="col-md-6"></app-imagen-portada>
+        <app-jumbotron class="col-md-6"></app-jumbotron>
     </div>
-    
+    <app-a-cerca-de></app-a-cerca-de>
 </div>

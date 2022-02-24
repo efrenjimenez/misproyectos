@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagenPortadaComponent implements OnInit {
 
+  srcFoto="../assets/img/inicio.jpg"
+
+  cambiarFoto(){
+    this.srcFoto="../assets/img/t1_completa2.jpg"
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -8,6 +8,8 @@ import { ImagenPortadaComponent } from './imagen-portada/imagen-portada.componen
 import { ACercaDeComponent } from './a-cerca-de/a-cerca-de.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { FechaComponent } from './fecha/fecha.component';
+import { SaludoComponent } from './saludo/saludo.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
     JumbotronComponent,
     ImagenPortadaComponent,
     ACercaDeComponent,
-    FooterComponent
+    FooterComponent,
+    FechaComponent,
+    SaludoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,15 @@ import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.co
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { ImagenPortadaComponent } from './imagen-portada/imagen-portada.component';
 import { ACercaDeComponent } from './a-cerca-de/a-cerca-de.component';
+import { Routes, RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
+
+const routes: Routes = [
+  { path: '', component: JumbotronComponent },
+  { path: 'acercade', component: ACercaDeComponent },
+  { path: '**', component: JumbotronComponent}
+];
 
 @NgModule({
   declarations: [
@@ -14,10 +22,12 @@ import { ACercaDeComponent } from './a-cerca-de/a-cerca-de.component';
     BarraNavegacionComponent,
     JumbotronComponent,
     ImagenPortadaComponent,
-    ACercaDeComponent
+    ACercaDeComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

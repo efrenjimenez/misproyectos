@@ -10,12 +10,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { FechaComponent } from './fecha/fecha.component';
 import { SaludoComponent } from './saludo/saludo.component';
+import { ListadoUsuariosComponent } from './listado-usuarios/listado-usuarios.component';
+import { InputTwoWayComponent } from './input-two-way/input-two-way.component';
+import { FormsModule } from '@angular/forms';
+import { InicioComponent } from './inicio/inicio.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 
 const routes: Routes = [
-  { path: '', component: JumbotronComponent },
+  { path: '', component: InicioComponent },
   { path: 'acercade', component: ACercaDeComponent },
-  { path: '**', component: JumbotronComponent}
+  { path: 'registro', component: FormularioComponent },
+  { path: '**', component: InicioComponent}
 ];
 
 @NgModule({
@@ -27,11 +33,16 @@ const routes: Routes = [
     ACercaDeComponent,
     FooterComponent,
     FechaComponent,
-    SaludoComponent
+    SaludoComponent,
+    ListadoUsuariosComponent,
+    InputTwoWayComponent,
+    InicioComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

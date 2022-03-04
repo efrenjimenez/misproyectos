@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AutorService } from '../servicios/autor.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  autor: any
+  
+
+  constructor(private autorService: AutorService) { }
 
   ngOnInit(): void {
+    this.autor=this.autorService.getAutor();
   }
 
 }

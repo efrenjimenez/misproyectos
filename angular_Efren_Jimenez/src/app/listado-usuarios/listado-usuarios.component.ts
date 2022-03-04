@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../modelos/usuario.modelo';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 @Component({
   selector: 'app-listado-usuarios',
@@ -8,15 +9,13 @@ import { Usuario } from '../modelos/usuario.modelo';
 })
 export class ListadoUsuariosComponent implements OnInit {
 
-  public usuarios: Array<Usuario> = [
-    {id: 1 , nombre: 'Juan', password: 'juan1234'},
-    {id: 2 , nombre: 'Pedro', password: 'pedro1234'},
-    {id: 3 , nombre: 'Luis', password: 'luis1234'}
-];
+  usuarios: any;
 
-  constructor() { }
+  constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
+    this.usuarios = this.usuariosService.getUsuarios();
+
   }
 
 }

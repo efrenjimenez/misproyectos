@@ -15,6 +15,7 @@ import { InputTwoWayComponent } from './input-two-way/input-two-way.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { UsuariosService } from './servicios/usuarios.service';
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UsuariosService],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

@@ -6,10 +6,10 @@
     <div class="card">
       <h5 class="card-header bg-succes">Autor</h5>
       <div class="card-body">
-        <h5 class="card-title">Efrén Jiménez Carrión</h5>
+        <h5 class="card-title">{{ autor.nombre+" "+autor.apellidos | titlecase }}</h5>
         <p class="card-text">
-          Diseño de aplicaciones web en entorno cliente<br>
-          2º DAW
+          {{ asignatura | titlecase }}<br>
+          {{ curso | uppercase }}
         </p>
       </div>
     </div>
@@ -87,7 +87,7 @@
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div class="col-6 ">
+        <div class="col-9 ">
           <app-listado-usuarios></app-listado-usuarios>
         </div>
       </div>

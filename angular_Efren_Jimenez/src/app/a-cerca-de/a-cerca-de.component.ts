@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutorService } from '../servicios/autor.service';
 
 @Component({
   selector: 'app-a-cerca-de',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ACercaDeComponent implements OnInit {
 
-  constructor() { }
+  autor: any;
+  curso: any;
+  asignatura: any;
+  
+  constructor(private autorService: AutorService) { }
 
   ngOnInit(): void {
-  }
+    this.autor=this.autorService.getAutor();
+    this.curso=this.autorService.getCurso();    
+    this.asignatura=this.autorService.getAsignatura();
 
+  }
 }

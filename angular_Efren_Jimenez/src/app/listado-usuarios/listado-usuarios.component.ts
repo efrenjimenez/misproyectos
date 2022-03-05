@@ -9,7 +9,7 @@ import { UsuariosService } from '../servicios/usuarios.service';
 })
 export class ListadoUsuariosComponent implements OnInit {
 
-  usuarios: any;
+  usuarios: Array<Usuario>=[];
 
   constructor(private usuariosService: UsuariosService) { }
 

@@ -5,9 +5,9 @@ import { getModuleFactory, Injectable } from '@angular/core';
 })
 export class AutorService {
 
-  autor={nombre: 'Efrén', apellidos: 'Jiménez Carrión'};
-  curso: String='2º DAW';
-  asignatura: String='Desarrollo Web en Entorno Cliente'
+  autor={nombre: 'efrén', apellidos: 'jiménez carrión'};
+  curso: String='2º daw';
+  asignatura: String='desarrollo web en entorno cliente'
 
   getAutor(){
     return this.autor;

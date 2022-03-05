@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Usuario } from '../modelos/usuario.modelo';
+import { UsuariosService } from '../servicios/usuarios.service';
+
 
 @Component({
   selector: 'app-formulario',
@@ -9,26 +12,41 @@ import { NgForm } from '@angular/forms';
 export class FormularioComponent implements OnInit {
 
   @ViewChild('formusu') formusu!: NgForm;
-  usuario: any;
+  usuario: Usuario;
 
-  constructor() {
+  constructor(private usuariosService: UsuariosService) {
     this.usuario = {
+      id:0,
       nombre:'',
       apellidos:'',
       email:'',
-      password:'',
       fechaNac:'',
+      nick:'',
+      password:'',
     }
   }
 
   onSubmit(){
-    this.usuario.nombre=this.formusu.value.nombre;
-    this.usuario.apellidos=this.formusu.value.apellidos;
-    this.usuario.email=this.formusu.value.email;
-    this.usuario.password=this.formusu.value.password;
-    this.usuario.fechaNac=this.formusu.value.fechaNac;
+    this.usuario=new Usuario(
+      this.formusu.value.nombre, 
+      this.formusu.value.apellidos, 
+      this.formusu.value.email, 
+      this.formusu.value.fechaNac,
+      this.formusu.value.nick,
+      this.formusu.value.password, 
+    )
+
+    // this.usuario.nombre=this.formusu.value.nombre;
+    // this.usuario.apellidos=this.formusu.value.apellidos;
+    // this.usuario.email=this.formusu.value.email;
+    // this.usuario.password=this.formusu.value.password;
+    // this.usuario.fechaNac=this.formusu.value.fechaNac;
 
     this.formusu.reset();
+    
+    this.usuariosService.insertUsuario(this.usuario);
+
+    this.usuariosService.setUsuario(this.usuario.nick, this.usuario);
   }
 
   ngOnInit(): void {

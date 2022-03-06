@@ -11,6 +11,7 @@ export class ACercaDeComponent implements OnInit {
   autor: any;
   curso: any;
   asignatura: any;
+  tecnologias: Array<String> = ["Angular CLI: 13.2.4","Node: 16.14.0","Package Manager: npm 8.3.1","TypeScript: 4.5.5", "Bootstrap: 5"];
   
   constructor(private autorService: AutorService) { }
 

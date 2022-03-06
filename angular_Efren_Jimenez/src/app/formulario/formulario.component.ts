@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Usuario } from '../modelos/usuario.modelo';
 import { UsuariosService } from '../servicios/usuarios.service';
+import { LocalstorageService } from '../servicios/localstorage.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class FormularioComponent implements OnInit {
   @ViewChild('formusu') formusu!: NgForm;
   usuario: Usuario;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private localStorageService: LocalstorageService) {
     this.usuario = {
       id:0,
       nombre:'',
@@ -46,7 +47,7 @@ export class FormularioComponent implements OnInit {
     
     this.usuariosService.insertUsuario(this.usuario);
 
-    this.usuariosService.setUsuario(this.usuario.nick, this.usuario);
+    this.localStorageService.set(this.usuario.nick, this.usuario);
   }
 
   ngOnInit(): void {

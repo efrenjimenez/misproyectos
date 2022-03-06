@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Login } from '../modelos/login.modelo';
 import { LocalstorageService } from '../servicios/localstorage.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('formlog') formlog!: NgForm;
   cont: number=0;
-  login: any;
+  login: Login;
 
   constructor(private LocalstorageService: LocalstorageService) {
     this.login = {
@@ -21,11 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.login.id=this.cont;
     this.login.nick=this.formlog.value.nick;
     this.login.password=this.formlog.value.password;
 
-    this.LocalstorageService.set(this.login.nick+"login", this.login.password);
+    this.LocalstorageService.set(this.login.nick+"Login", this.login);
 
     this.formlog.reset();
   }
